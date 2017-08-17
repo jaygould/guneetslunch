@@ -5,8 +5,6 @@ const insta = require('instagram-node').instagram();
 
 //Used in the instagram-node package
 var redirect_uri = `${process.env.API_URL}/api/insta/getToken`;
-console.log(redirect_uri);
-console.log(process.env.API_URL + 'aaaaaaaaaa');
 const getAuthUrl = function(req, res) {
 	insta.use({
 		client_id: process.env.INSTA_CLIENT,

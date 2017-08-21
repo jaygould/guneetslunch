@@ -31,3 +31,12 @@ While developing I use my local Node install, but for the production app it uses
 Local dev uses the dotenv Node package to bring in the environment variables from .env file in to Node. First the `require('dotenv').config()` is added at the top of the server file and it allows the use of .env variables.
 
 There's no remote DB present in this app, so the only credentials needed to secure is the Instagram API keys and the current API URL (which is needed for the Instagram redirect URL). These are stored in a config.json file which is hidden from Git.
+
+## Alternative to the env var used in this project
+
+Heroku keeps its variables on their own system but in the event that we are using our own custom server, it will be best to have local and remote config variables on one file, and use environment variables to switch between the local/remote, similar to [this](https://medium.com/node-and-beyond/environment-dependent-node-js-configuration-b51149286e7e) or [this](https://stackoverflow.com/questions/45717379/using-environment-variables-in-node).
+
+# To do
+
+* Add caching or some way to save the instagram access token on the device.
+* Storing sensitive data on the device is bad as per [this](https://rammic.github.io/2015/07/28/hiding-secrets-in-android-apps/) post. Need to get sensitive keys from server in real project.
